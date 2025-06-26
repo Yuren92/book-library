@@ -1,0 +1,30 @@
+<div class="form-container">
+  <h2>📘 Nuevo Libro</h2>
+
+  <form (ngSubmit)="saveBook()" #bookForm="ngForm">
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input id="title" name="title" [(ngModel)]="book.title" required />
+    </div>
+
+    <div class="form-group">
+      <label for="author">Autor:</label>
+      <input id="author" name="author" [(ngModel)]="book.author" required />
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Género:</label>
+      <input id="genre" name="genre" [(ngModel)]="book.genre" />
+    </div>
+
+    <div class="form-group">
+      <label for="year">Año:</label>
+      <input id="year" name="year" [(ngModel)]="book.year" type="number" />
+    </div>
+
+    <div class="form-buttons">
+      <button type="submit" [disabled]="bookForm.invalid">💾 Guardar</button>
+      <button type="button" (click)="cancel()">↩️ Cancelar</button>
+    </div>
+  </form>
+</div>

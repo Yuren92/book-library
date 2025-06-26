@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Lista de libros</h2>
+
+  <div class="button-container">
+    <button [routerLink]="['/book/new']"> Nuevo libro</button>
+  </div>
+
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    (input)="onSearch()"
+    placeholder="Buscar por título o autor"
+    class="search-input"
+  />
+
+  <div *ngFor="let book of filteredBooks" class="book-item">
+    <div class="book-text">
+      <a [routerLink]="['/book', book.id]">{{ book.title }} - {{ book.author }}</a>
+    </div>
+    <button (click)="deleteBook(book.id)">Eliminar</button>
+  </div>
+</div>

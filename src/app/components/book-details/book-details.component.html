@@ -1,0 +1,9 @@
+<div *ngIf="book">
+  <h3>{{ book.title }}</h3>
+  <p><strong>Autor:</strong> {{ book.author }}</p>
+  <p><strong>Year:</strong> {{ book.year }}</p>
+  <p><strong>Genre:</strong> {{ book.genre }}</p>
+
+    <button (click)="goBack()">← Volver al listado</button>
+
+</div>
